@@ -1,0 +1,30 @@
+---
+import BulletList from './BulletList.astro';
+
+export interface Props {
+	company: string;
+	locationPeriod: string;
+	role: string;
+	points: string[];
+	achievements?: string[];
+}
+
+const { company, locationPeriod, role, points, achievements } = Astro.props;
+---
+
+<article class="mt-6">
+	<header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
+		<h3 class="text-lg font-medium">{company}</h3>
+		<p class="text-xs text-zinc-400">{locationPeriod}</p>
+	</header>
+	<p class="text-sm italic text-zinc-400">{role}</p>
+	<BulletList items={points} class="mt-3" />
+	{achievements && achievements.length > 0 && (
+		<>
+			<h4 class="mt-4 font-medium">Notable achievements</h4>
+			<BulletList items={achievements} class="mt-2" />
+		</>
+	)}
+</article>
+
+

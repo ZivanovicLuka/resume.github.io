@@ -1,25 +1,102 @@
 ---
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import BulletList from '../components/BulletList.astro';
+import EducationItem from '../components/EducationItem.astro';
+import SkillsBlock from '../components/SkillsBlock.astro';
+import InterestsBlock from '../components/InterestsBlock.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + Tailwind</title>
-	</head>
-	<body class="min-h-dvh bg-white text-zinc-900 antialiased">
-		<main class="mx-auto flex min-h-dvh max-w-3xl items-center justify-center p-6">
-			<section class="w-full text-center">
-				<h1 class="mb-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-					Welcome to Astro + Tailwind
-				</h1>
-				<p class="mx-auto max-w-prose text-balance text-zinc-600">
-					Start editing <code class="rounded bg-zinc-100 px-1 py-0.5 text-zinc-800">src/pages/index.astro</code>.
-				</p>
-			</section>
-		</main>
-	</body>
-</html>
+<BaseLayout title="Luka Živanović — CV" description="Engineering Manager & Full‑Stack Developer">
+	<Section id="summary" title="Summary" class="mt-0">
+		<p class="text-zinc-300">
+			Engineering Manager and full‑stack engineer with a strong background in computer science, teaching, and Web3
+			product delivery. Experienced in leading and scaling cross‑functional engineering teams, defining processes,
+			and driving technical direction across frontend, backend, and blockchain systems. Proven track record of
+			taking products from idea to production, mentoring and hiring engineers, and contributing hands‑on to complex
+			or high‑impact parts of the stack.
+		</p>
+	</Section>
+
+	<Section id="experience" title="Experience">
+
+		<ExperienceItem
+			company="Streamflow Finance"
+			locationPeriod="Remote / Belgrade · Feb. 2023 — Present"
+			role="Engineering Manager, ex. Frontend IC"
+			points={[
+				'Led engineering for a multi‑chain token streaming, airdrop, and staking platform (primary focus on Solana).',
+				'Managed and mentored a cross‑functional team (Frontend, Backend, Blockchain, QA) and established processes and ownership.',
+				'Partnered with Product and Leadership on roadmap, scoping, delivery planning, and aligning priorities with business goals.',
+				'Drove engineering quality standards, hiring, growth, and day‑to‑day technical execution.',
+				'Contributed hands‑on to protocol integrations, performance, and refactors to unblock delivery.'
+			]}
+			achievements={[
+				'Scaled the engineering team from 2 to 6+ while introducing leveling and hiring processes.',
+				'Shipped Token Locks, Project Dashboards, and Multi‑chain support used by 1.3M+ users.',
+				'Improved delivery predictability with planning rituals, OKRs, and cross‑team communication structures.'
+			]}
+		/>
+
+		<ExperienceItem
+			company="Microsoft"
+			locationPeriod="Belgrade, Serbia · Apr. 2020 — Feb. 2023"
+			role="Software Engineer"
+			points={[
+				'Worked as a full‑stack engineer on Microsoft Word for Web, Windows, and macOS clients.',
+				'Built and maintained features for the first‑party Editor plugin with emphasis on reliability, performance, accessibility, and large‑scale robustness.',
+				'Delivered features end‑to‑end in collaboration with cross‑team partners from design through rollout, telemetry, and long‑term maintenance.'
+			]}
+		/>
+
+		<ExperienceItem
+			company="Faculty of Mathematics, University of Belgrade"
+			locationPeriod="Belgrade, Serbia · Oct. 2018 — Sep. 2019"
+			role="Teaching Assistant"
+			points={[
+				'Assisted in teaching undergraduate courses in informatics and programming.',
+				'Led exercise classes, prepared materials and assignments, and mentored students.'
+			]}
+		/>
+
+		<ExperienceItem
+			company="Code by Comtrade"
+			locationPeriod="Belgrade, Serbia · Feb. 2019 — Aug. 2019"
+			role="Teacher"
+			points={[
+				'Taught web programming and software development fundamentals to adults undergoing career change.',
+				'Designed exercises and practical mini‑projects to introduce real‑world web development.'
+			]}
+		/>
+	</Section>
+
+	<Section id="education" title="Education">
+		<ul class="space-y-2">
+			<EducationItem degree="Master Studies in Informatics" institution="Faculty of Mathematics, University of Belgrade" years="2017—2022" />
+			<EducationItem degree="BSc in Informatics" institution="Faculty of Mathematics, University of Belgrade" years="2014—2017" />
+		</ul>
+	</Section>
+
+	<Section id="awards" title="Awards">
+		<BulletList
+			items={[
+				'MatHack — Faculty of Mathematics, Belgrade · 2nd place — trajectory generation using machine learning (May 2018)',
+				'Deep Web Hackathon — Brasidas, Belgrade · 2nd place — website analysis (Apr. 2017)',
+				'Beyond Hackathon — Eurobank, Athens · 2nd place (of 38 teams) — Eurobank voice assistant (Mar. 2017)'
+			]}
+		/>
+	</Section>
+
+	<Section id="skills" title="Skills">
+		<SkillsBlock
+			technologies="TypeScript, React, Python, Pandas, SQL, .NET, Java, C++."
+			notes="Selected technologies reflecting my most recent and relevant experience."
+			languages="Serbian (native), English (fluent)"
+		/>
+	</Section>
+
+	<Section id="interests" title="Interests">
+		<InterestsBlock text="Powerlifting, e‑skateboarding, snowboarding, wakeboarding, board games, coffee, bouldering" />
+	</Section>
+</BaseLayout>

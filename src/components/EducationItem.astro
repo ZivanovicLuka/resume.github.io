@@ -1,0 +1,17 @@
+---
+export interface Props {
+	degree: string;
+	institution: string;
+	years: string;
+}
+const { degree, institution, years } = Astro.props;
+---
+
+<li>
+	<p class="font-medium">{degree}</p>
+	<p class="text-sm text-zinc-400">{institution} · {years}</p>
+	<slot />
+	<!-- slot allows optional extra info -->
+</li>
+
+

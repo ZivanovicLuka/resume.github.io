@@ -1,0 +1,21 @@
+---
+export interface Props {
+	technologies: string;
+	notes?: string;
+	languages: string;
+}
+const { technologies, notes, languages } = Astro.props;
+---
+
+<div class="space-y-3">
+	<p class="text-zinc-300">
+		<span class="font-medium">Technologies (selected):</span> {technologies}
+		{notes && <span class="block text-zinc-400">{notes}</span>}
+	</p>
+	<p class="text-zinc-300">
+		<span class="font-medium">Languages:</span> {languages}
+	</p>
+	<slot />
+</div>
+
+

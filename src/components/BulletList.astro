@@ -1,0 +1,13 @@
+---
+export interface Props {
+	items: string[];
+	class?: string;
+}
+const { items, class: className } = Astro.props;
+---
+
+<ul class:list={['list-disc space-y-2 pl-5 text-zinc-300', className]}>
+	{items.map((item) => <li>{item}</li>)}
+</ul>
+
+

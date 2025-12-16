@@ -1,0 +1,49 @@
+---
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = 'Luka Živanović — CV', description = 'Engineering Manager & Full‑Stack Developer' } = Astro.props;
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-dvh bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-200 selection:text-zinc-900">
+		<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-zinc-100 focus:px-3 focus:py-2 focus:text-zinc-900">Skip to content</a>
+		<header class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
+			<div class="mx-auto max-w-3xl px-4 py-5">
+				<h1 class="text-xl font-semibold tracking-tight">Luka Živanović</h1>
+				<p class="mt-1 text-sm text-zinc-300">Engineering Manager & Full‑Stack Developer · Streamflow · ex. Microsoft</p>
+				<nav aria-label="Primary" class="mt-4">
+					<ul class="flex flex-wrap gap-3 text-sm text-zinc-300">
+						<li><a href="#summary" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 rounded">Summary</a></li>
+						<li><a href="#experience" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 rounded">Experience</a></li>
+						<li><a href="#education" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 rounded">Education</a></li>
+						<li><a href="#awards" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 rounded">Awards</a></li>
+						<li><a href="#skills" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 rounded">Skills</a></li>
+						<li><a href="#interests" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 rounded">Interests</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main id="content" class="mx-auto max-w-3xl px-4 py-10">
+			<slot />
+		</main>
+		<footer class="border-t border-zinc-800">
+			<div class="mx-auto max-w-3xl px-4 py-6 text-xs text-zinc-400">
+				<p>Belgrade, Serbia · <a class="underline hover:text-zinc-200" href="mailto:lukazivanovic@gmail.com">lukazivanovic@gmail.com</a></p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+
