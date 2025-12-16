@@ -2,13 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
-import BulletList from '../components/BulletList.astro';
 import EducationItem from '../components/EducationItem.astro';
 import SkillsBlock from '../components/SkillsBlock.astro';
 import InterestsBlock from '../components/InterestsBlock.astro';
 ---
 
-<BaseLayout title="Luka Živanović — CV" description="Engineering Manager & Full‑Stack Developer">
+<BaseLayout title="Luka Živanović - CV" description="Engineering Manager & Full‑Stack Developer">
 	<Section id="summary" title="Summary" class="mt-0">
 		<p class="text-zinc-300">
 			Engineering Manager and full‑stack engineer with a strong background in computer science, teaching, and Web3
@@ -23,8 +22,10 @@ import InterestsBlock from '../components/InterestsBlock.astro';
 
 		<ExperienceItem
 			company="Streamflow Finance"
-			locationPeriod="Remote / Belgrade · Feb. 2023 — Present"
+			locationPeriod="Remote / Belgrade · Feb. 2023 - Present"
 			role="Engineering Manager, ex. Frontend IC"
+			href="https://streamflow.finance"
+			logoSrc="/logos/streamflow.svg"
 			points={[
 				'Led engineering for a multi‑chain token streaming, airdrop, and staking platform (primary focus on Solana).',
 				'Managed and mentored a cross‑functional team (Frontend, Backend, Blockchain, QA) and established processes and ownership.',
@@ -41,8 +42,10 @@ import InterestsBlock from '../components/InterestsBlock.astro';
 
 		<ExperienceItem
 			company="Microsoft"
-			locationPeriod="Belgrade, Serbia · Apr. 2020 — Feb. 2023"
+			locationPeriod="Belgrade, Serbia · Apr. 2020 - Feb. 2023"
 			role="Software Engineer"
+			href="https://www.microsoft.com"
+			logoSrc="/logos/microsoft.svg"
 			points={[
 				'Worked as a full‑stack engineer on Microsoft Word for Web, Windows, and macOS clients.',
 				'Built and maintained features for the first‑party Editor plugin with emphasis on reliability, performance, accessibility, and large‑scale robustness.',
@@ -52,8 +55,10 @@ import InterestsBlock from '../components/InterestsBlock.astro';
 
 		<ExperienceItem
 			company="Faculty of Mathematics, University of Belgrade"
-			locationPeriod="Belgrade, Serbia · Oct. 2018 — Sep. 2019"
+			locationPeriod="Belgrade, Serbia · Oct. 2018 - Sep. 2019"
 			role="Teaching Assistant"
+			href="https://www.matf.bg.ac.rs"
+			logoSrc="/logos/matf.svg"
 			points={[
 				'Assisted in teaching undergraduate courses in informatics and programming.',
 				'Led exercise classes, prepared materials and assignments, and mentored students.'
@@ -62,8 +67,10 @@ import InterestsBlock from '../components/InterestsBlock.astro';
 
 		<ExperienceItem
 			company="Code by Comtrade"
-			locationPeriod="Belgrade, Serbia · Feb. 2019 — Aug. 2019"
+			locationPeriod="Belgrade, Serbia · Feb. 2019 - Aug. 2019"
 			role="Teacher"
+			href="https://comtrade.com"
+			logoSrc="/logos/comtrade.svg"
 			points={[
 				'Taught web programming and software development fundamentals to adults undergoing career change.',
 				'Designed exercises and practical mini‑projects to introduce real‑world web development.'
@@ -73,19 +80,26 @@ import InterestsBlock from '../components/InterestsBlock.astro';
 
 	<Section id="education" title="Education">
 		<ul class="space-y-2">
-			<EducationItem degree="Master Studies in Informatics" institution="Faculty of Mathematics, University of Belgrade" years="2017—2022" />
-			<EducationItem degree="BSc in Informatics" institution="Faculty of Mathematics, University of Belgrade" years="2014—2017" />
+			<EducationItem degree="Master Studies in Informatics" institution="Faculty of Mathematics, University of Belgrade" years="2017-2022" />
+			<EducationItem degree="BSc in Informatics" institution="Faculty of Mathematics, University of Belgrade" years="2014-2017" />
 		</ul>
 	</Section>
 
 	<Section id="awards" title="Awards">
-		<BulletList
-			items={[
-				'MatHack — Faculty of Mathematics, Belgrade · 2nd place — trajectory generation using machine learning (May 2018)',
-				'Deep Web Hackathon — Brasidas, Belgrade · 2nd place — website analysis (Apr. 2017)',
-				'Beyond Hackathon — Eurobank, Athens · 2nd place (of 38 teams) — Eurobank voice assistant (Mar. 2017)'
-			]}
-		/>
+		<ul class="space-y-2">
+			<li class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
+				<p class="text-zinc-300">MatHack - Faculty of Mathematics, Belgrade · 2nd place - trajectory generation using machine learning</p>
+				<p class="text-xs text-zinc-400">May 2018</p>
+			</li>
+			<li class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
+				<p class="text-zinc-300">Deep Web Hackathon - Brasidas, Belgrade · 2nd place - website analysis</p>
+				<p class="text-xs text-zinc-400">Apr. 2017</p>
+			</li>
+			<li class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
+				<p class="text-zinc-300">Beyond Hackathon - Eurobank, Athens · 2nd place (of 38 teams) - Eurobank voice assistant</p>
+				<p class="text-xs text-zinc-400">Mar. 2017</p>
+			</li>
+		</ul>
 	</Section>
 
 	<Section id="skills" title="Skills">

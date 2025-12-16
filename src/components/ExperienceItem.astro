@@ -7,14 +7,28 @@ export interface Props {
 	role: string;
 	points: string[];
 	achievements?: string[];
+	href?: string;
+	logoSrc?: string;
 }
 
-const { company, locationPeriod, role, points, achievements } = Astro.props;
+const { company, locationPeriod, role, points, achievements, href, logoSrc } = Astro.props;
 ---
 
 <article class="mt-6">
 	<header class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-		<h3 class="text-lg font-medium">{company}</h3>
+		<h3 class="text-lg font-medium">
+			{href ? (
+				<a href={href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:underline">
+					{logoSrc && <img src={logoSrc} alt="" class="h-5 w-5 rounded-sm object-contain" loading="lazy" />}
+					<span>{company}</span>
+				</a>
+			) : (
+				<span class="inline-flex items-center gap-2">
+					{logoSrc && <img src={logoSrc} alt="" class="h-5 w-5 rounded-sm object-contain" loading="lazy" />}
+					<span>{company}</span>
+				</span>
+			)}
+		</h3>
 		<p class="text-xs text-zinc-400">{locationPeriod}</p>
 	</header>
 	<p class="text-sm italic text-zinc-400">{role}</p>
