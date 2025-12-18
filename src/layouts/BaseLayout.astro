@@ -19,28 +19,43 @@ import '../styles/global.css';
 	</head>
 	<body class="min-h-dvh bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-200 selection:text-zinc-900">
 		<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-zinc-100 focus:px-3 focus:py-2 focus:text-zinc-900">Skip to content</a>
-		<header id="site-header" class="sticky top-0 z-40 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
+		<header id="site-header" class="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
 			<div id="site-header-inner" class="mx-auto max-w-5xl px-4 py-5 transition-all duration-300">
-				<div id="site-identity" class="flex items-start gap-4 transition-all">
-					<img
-						id="site-avatar"
-						src="/luka.jpg"
-						alt="Portrait of Luka Živanović"
-						class="h-16 w-16 rounded-full object-cover ring-1 ring-zinc-800 transition-all duration-300"
-						loading="eager"
-						decoding="async"
-						width="64"
-						height="64"
-					/>
-					<div class="transition-all">
-						<h1 id="site-title" class="text-xl font-semibold tracking-tight transition-all">Luka Živanović</h1>
-						<p id="site-subtitle" class="mt-1 text-sm text-zinc-300 transition-all">Engineering Manager & Full‑Stack Developer · Streamflow · ex. Microsoft</p>
+				<div class="flex items-center justify-between gap-3">
+					<div id="site-identity" class="flex items-start gap-4 transition-all">
+						<img
+							id="site-avatar"
+							src="/luka.jpg"
+							alt="Portrait of Luka Živanović"
+							class="h-16 w-16 rounded-full object-cover ring-1 ring-zinc-800 transition-all duration-300"
+							loading="eager"
+							decoding="async"
+							width="64"
+							height="64"
+						/>
+						<div class="transition-all">
+							<h1 id="site-title" class="text-xl font-semibold tracking-tight transition-all">Luka Živanović</h1>
+							<p id="site-subtitle" class="mt-1 text-sm text-zinc-300 transition-all">Engineering Manager & Full‑Stack Developer · Streamflow · ex. Microsoft</p>
+						</div>
 					</div>
+					<button
+						id="mobile-menu-button"
+						type="button"
+						class="lg:hidden inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-zinc-300 hover:text-white hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50"
+						aria-label="Open menu"
+						aria-controls="mobile-menu"
+						aria-expanded="false"
+						tabindex="0"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					</button>
 				</div>
 				<nav
 					id="site-primary-nav"
 					aria-label="Primary"
-					class="mt-4 overflow-hidden opacity-100 transition-all duration-300 will-change-transform"
+					class="hidden lg:block mt-4 overflow-hidden opacity-100 transition-all duration-300 will-change-transform"
 					style="height:auto"
 				>
 					<ul class="m-0 p-0 flex flex-wrap gap-3 text-sm text-zinc-300">
@@ -55,6 +70,26 @@ import '../styles/global.css';
 				</nav>
 			</div>
 		</header>
+		<!-- Mobile overlay and menu (between header and footer) -->
+		<div id="mobile-overlay" class="lg:hidden fixed inset-x-0 top-0 bottom-0 z-40 bg-zinc-950/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"></div>
+		<div
+			id="mobile-menu"
+			class="lg:hidden fixed inset-x-0 top-0 bottom-0 z-50 overflow-hidden opacity-0 pointer-events-none transition-all duration-300 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60"
+			style="max-height:0px"
+			aria-label="Mobile Primary"
+		>
+			<div class="h-full overflow-auto">
+				<ul class="m-0 p-4 space-y-1">
+					<li><a href="#summary" class="block rounded-md px-4 py-3 text-base text-zinc-200 hover:bg-zinc-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50">Summary</a></li>
+                    <li><a href="#work" class="block rounded-md px-4 py-3 text-base text-zinc-200 hover:bg-zinc-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50">Work with me</a></li>
+					<li><a href="#experience" class="block rounded-md px-4 py-3 text-base text-zinc-200 hover:bg-zinc-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50">Experience</a></li>
+					<li><a href="#education" class="block rounded-md px-4 py-3 text-base text-zinc-200 hover:bg-zinc-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50">Education</a></li>
+					<li><a href="#awards" class="block rounded-md px-4 py-3 text-base text-zinc-200 hover:bg-zinc-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50">Awards</a></li>
+					<li><a href="#skills" class="block rounded-md px-4 py-3 text-base text-zinc-200 hover:bg-zinc-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50">Skills</a></li>
+					<li><a href="#interests" class="block rounded-md px-4 py-3 text-base text-zinc-200 hover:bg-zinc-800/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50">Interests</a></li>
+				</ul>
+			</div>
+		</div>
 		<main id="content" class="mx-auto max-w-5xl px-4 py-10">
 			<div class="grid gap-10 lg:grid-cols-[1fr_16rem]">
 				<div>
@@ -76,7 +111,7 @@ import '../styles/global.css';
 				</aside>
 			</div>
 		</main>
-		<footer class="sticky bottom-0 z-40 border-t border-zinc-800 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
+		<footer id="site-footer" class="sticky bottom-0 z-40 border-t border-zinc-800 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
 			<div class="mx-auto max-w-5xl px-4 py-6 text-xs text-zinc-400">
 				<p>Belgrade, Serbia · <a class="underline hover:text-zinc-200" href="mailto:lukazivanovic@gmail.com">lukazivanovic@gmail.com</a></p>
 			</div>
@@ -90,11 +125,28 @@ import '../styles/global.css';
 				const subtitle = document.getElementById('site-subtitle');
 				const toc = document.getElementById('toc');
 				const identity = document.getElementById('site-identity');
+				const mobileBtn = document.getElementById('mobile-menu-button');
+				const mobileMenu = document.getElementById('mobile-menu');
+				const mobileOverlay = document.getElementById('mobile-overlay');
+				const footerEl = document.getElementById('site-footer');
 				if (!nav || !headerInner || !avatar || !title || !subtitle || !identity) return;
 				let openNavHeight = 0;
 				let isCollapsed = false;
 				const COLLAPSE_Y = 260; // collapse after this scroll
 				const EXPAND_Y = 140;   // expand when scrolled back above this
+				const positionMobileLayers = () => {
+					if (!mobileMenu || !mobileOverlay) return;
+					const headerH = headerInner.offsetHeight;
+					const footerH = footerEl ? footerEl.offsetHeight : 0;
+					const available = Math.max(0, window.innerHeight - headerH - footerH);
+					mobileMenu.style.top = `${headerH}px`;
+					mobileMenu.style.bottom = `${footerH}px`;
+					mobileOverlay.style.top = `${headerH}px`;
+					mobileOverlay.style.bottom = `${footerH}px`;
+					if (mobileBtn && mobileBtn.getAttribute('aria-expanded') === 'true') {
+						mobileMenu.style.maxHeight = `${available}px`;
+					}
+				};
 				const measure = () => {
 					// measure the natural height of the nav content for smooth height transitions
 					const list = nav.querySelector('ul');
@@ -103,6 +155,7 @@ import '../styles/global.css';
 					if (openNavHeight > 0 && nav.style.height !== '0px') {
 						nav.style.height = `${openNavHeight}px`;
 					}
+					positionMobileLayers();
 				};
 				const apply = () => {
 					const lgUp = window.matchMedia('(min-width: 1024px)').matches;
@@ -152,6 +205,7 @@ import '../styles/global.css';
 					// keep right sidebar below header
 					if (toc) toc.style.top = `${headerInner.offsetHeight + 12}px`;
 					isCollapsed = nextCollapsed;
+					positionMobileLayers();
 				};
 				measure();
 				apply();
@@ -159,7 +213,114 @@ import '../styles/global.css';
 				window.addEventListener('resize', () => {
 					measure();
 					requestAnimationFrame(apply);
+					// close mobile menu when moving to lg+
+					const lgUp = window.matchMedia('(min-width: 1024px)').matches;
+					if (lgUp && mobileBtn && mobileMenu && mobileOverlay) {
+						mobileBtn.setAttribute('aria-expanded', 'false');
+						mobileMenu.style.maxHeight = '0px';
+						mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+						mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+						mobileOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+						mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+					}
 				}, { passive: true });
+				// mobile menu toggle
+				if (mobileBtn && mobileMenu && mobileOverlay) {
+					const closeMobile = () => {
+						mobileBtn.setAttribute('aria-expanded', 'false');
+						mobileMenu.style.maxHeight = '0px';
+						mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+						mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+						mobileOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+						mobileOverlay.classList.add('opacity-0', 'pointer-events-none');
+					};
+					const openMobile = () => {
+						// set available height and positions
+						const headerH = headerInner.offsetHeight;
+						const footerH = footerEl ? footerEl.offsetHeight : 0;
+						const available = Math.max(0, window.innerHeight - headerH - footerH);
+						mobileMenu.style.top = `${headerH}px`;
+						mobileMenu.style.bottom = `${footerH}px`;
+						mobileOverlay.style.top = `${headerH}px`;
+						mobileOverlay.style.bottom = `${footerH}px`;
+						mobileMenu.style.maxHeight = `${available}px`;
+						mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+						mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+						mobileOverlay.classList.remove('opacity-0', 'pointer-events-none');
+						mobileOverlay.classList.add('opacity-100', 'pointer-events-auto');
+						mobileBtn.setAttribute('aria-expanded', 'true');
+					};
+					const toggleMobile = () => {
+						const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+						if (expanded) closeMobile(); else openMobile();
+					};
+					mobileBtn.addEventListener('click', toggleMobile);
+					// close on link click
+					mobileMenu.addEventListener('click', (e) => {
+						const el = e.target instanceof Element ? e.target.closest('a') : null;
+						if (el) {
+							closeMobile();
+						}
+					});
+					// click outside to close
+					document.addEventListener('click', (e) => {
+						const t = e.target;
+						if (!(t instanceof Element)) return;
+						if (!mobileMenu.contains(t) && !mobileBtn.contains(t)) {
+							if (mobileBtn.getAttribute('aria-expanded') === 'true') {
+								closeMobile();
+							}
+						}
+					});
+					// overlay click closes
+					mobileOverlay.addEventListener('click', toggleMobile);
+					// esc to close
+					document.addEventListener('keydown', (e) => {
+						if (e.key === 'Escape' && mobileBtn.getAttribute('aria-expanded') === 'true') {
+							closeMobile();
+						}
+					});
+					// intercept in-page anchor clicks (ensure header-safe offset)
+					document.addEventListener('click', (e) => {
+						const t = e.target;
+						if (!(t instanceof Element)) return;
+						const link = t.closest('a[href^="#"]');
+						if (!link) return;
+						const href = link.getAttribute('href') || '';
+						if (href.length <= 1) return;
+						const target = document.querySelector(href);
+						if (!target) return;
+						e.preventDefault();
+						closeMobile();
+						requestAnimationFrame(() => {
+							const headerH = headerInner.offsetHeight;
+							const y = target.getBoundingClientRect().top + window.scrollY - headerH - 8;
+							window.scrollTo({ top: y, behavior: 'smooth' });
+						});
+					}, true);
+					// adjust when loading with a hash
+					if (location.hash) {
+						const target = document.querySelector(location.hash);
+						if (target) {
+							requestAnimationFrame(() => {
+								const headerH = headerInner.offsetHeight;
+								const y = target.getBoundingClientRect().top + window.scrollY - headerH - 8;
+								window.scrollTo({ top: y });
+							});
+						}
+					}
+					// and when hash changes (e.g., back/forward)
+					window.addEventListener('hashchange', () => {
+						const target = document.querySelector(location.hash);
+						if (target) {
+							requestAnimationFrame(() => {
+								const headerH = headerInner.offsetHeight;
+								const y = target.getBoundingClientRect().top + window.scrollY - headerH - 8;
+								window.scrollTo({ top: y, behavior: 'smooth' });
+							});
+						}
+					});
+				}
 			})();
 		</script>
 	</body>
