@@ -175,4 +175,58 @@ import AwardItem from '../components/AwardItem.astro';
 	<Section id="interests" title="Interests">
 		<InterestsBlock text="Powerlifting, e‑skateboarding, snowboarding, wakeboarding, board games, coffee, bouldering" />
 	</Section>
+
+	<Section id="contact" title="Say hi">
+		<p class="text-zinc-300">Prefer async? Reach me on any of these channels.</p>
+		<div class="mt-6 grid gap-4 sm:grid-cols-3">
+			<a
+				href="https://t.me/Hrimthusar"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 transition-colors hover:bg-zinc-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50"
+				aria-label="Contact on Telegram"
+			>
+				<span class="inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-sky-500/15 text-sky-400 ring-1 ring-inset ring-sky-400/20">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+						<path d="M9.042 12.493 8.82 16.19c.454 0 .652-.195.888-.427l2.133-2.052 4.422 3.237c.811.447 1.387.212 1.607-.75l2.91-13.645h.001c.258-1.203-.435-1.675-1.227-1.384L1.12 8.27c-1.177.457-1.16 1.113-.2 1.41l4.9 1.525L18.93 5.28c.701-.445 1.335-.199.811.246" />
+					</svg>
+				</span>
+				<div class="min-w-0 flex flex-col">
+					<span class="font-medium text-zinc-100">Telegram</span>
+					<span class="truncate text-sm text-zinc-400">@Hrimthusar</span>
+				</div>
+			</a>
+			<a
+				href="https://www.linkedin.com/in/luka-%C5%BEivanovi%C4%87-1a63306b/"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="group flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 transition-colors hover:bg-zinc-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50"
+				aria-label="Open LinkedIn profile"
+			>
+				<span class="inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-blue-500/15 text-blue-400 ring-1 ring-inset ring-blue-400/20">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+						<path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24 107 0 83 0 53.64 0 24.29 24.29 0 53.64 0c29.35 0 53.64 24.29 53.64 53.64 0 29.36-24.28 53.36-53.44 53.36zM447.9 448h-92.68V302.4c0-34.7-.7-79.1-48.2-79.1-48.2 0-55.6 37.7-55.6 76.6V448H158.8V148.9h88.9v40.8h1.3c12.4-23.5 42.6-48.2 87.7-48.2 93.8 0 111 61.8 111 142.3z"/>
+					</svg>
+				</span>
+				<div class="min-w-0 flex flex-col">
+					<span class="font-medium text-zinc-100">LinkedIn</span>
+				</div>
+			</a>
+			<a
+				href="mailto:lukazivanovic@gmail.com"
+				class="group flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 transition-colors hover:bg-zinc-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50"
+				aria-label="Send email to lukazivanovic@gmail.com"
+			>
+				<span class="inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400 ring-1 ring-inset ring-emerald-400/20">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+						<path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15A2.25 2.25 0 0 1 2.25 17.25zm2.4.75 7.35 4.41L19.35 7.5zM19.5 9.3l-7.5 4.5-7.5-4.5v7.95a.75.75 0 0 0 .75.75h13.5a.75.75 0 0 0 .75-.75z"/>
+					</svg>
+				</span>
+				<div class="min-w-0 flex flex-col">
+					<span class="font-medium text-zinc-100">Email</span>
+					<span class="truncate text-sm text-zinc-400">lukazivanovic@gmail.com</span>
+				</div>
+			</a>
+		</div>
+	</Section>
 </BaseLayout>
