@@ -1,13 +1,19 @@
 ---
 export interface Props {
+	skills?: string;
 	technologies: string;
 	notes?: string;
 	languages: string;
 }
-const { technologies, notes, languages } = Astro.props;
+const { skills, technologies, notes, languages } = Astro.props;
 ---
 
 <div class="space-y-3">
+	{skills && (
+		<p class="text-zinc-300">
+			<span class="font-medium">Skills:</span> {skills}
+		</p>
+	)}
 	<p class="text-zinc-300">
 		<span class="font-medium">Technologies (selected):</span> {technologies}
 		{notes && <span class="block text-zinc-400">{notes}</span>}

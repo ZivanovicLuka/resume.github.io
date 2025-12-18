@@ -21,8 +21,21 @@ import '../styles/global.css';
 		<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-zinc-100 focus:px-3 focus:py-2 focus:text-zinc-900">Skip to content</a>
 		<header class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
 			<div class="mx-auto max-w-5xl px-4 py-5">
-				<h1 class="text-xl font-semibold tracking-tight">Luka Živanović</h1>
-				<p class="mt-1 text-sm text-zinc-300">Engineering Manager & Full‑Stack Developer · Streamflow · ex. Microsoft</p>
+				<div class="flex items-start gap-4">
+					<img
+						src="/luka.jpg"
+						alt="Portrait of Luka Živanović"
+						class="h-16 w-16 rounded-full object-cover ring-1 ring-zinc-800"
+						loading="eager"
+						decoding="async"
+						width="64"
+						height="64"
+					/>
+					<div>
+						<h1 class="text-xl font-semibold tracking-tight">Luka Živanović</h1>
+						<p class="mt-1 text-sm text-zinc-300">Engineering Manager & Full‑Stack Developer · Streamflow · ex. Microsoft</p>
+					</div>
+				</div>
 				<nav aria-label="Primary" class="mt-4">
 					<ul class="flex flex-wrap gap-3 text-sm text-zinc-300">
 						<li><a href="#summary" class="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400/50 rounded">Summary</a></li>

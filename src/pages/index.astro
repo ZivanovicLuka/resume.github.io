@@ -6,6 +6,7 @@ import EducationItem from '../components/EducationItem.astro';
 import SkillsBlock from '../components/SkillsBlock.astro';
 import InterestsBlock from '../components/InterestsBlock.astro';
 import StreamflowIcon from '../components/icons/StreamflowIcon.astro';
+import AwardItem from '../components/AwardItem.astro';
 ---
 
 <BaseLayout title="Luka Živanović - CV" description="Engineering Manager & Full‑Stack Developer">
@@ -89,24 +90,28 @@ import StreamflowIcon from '../components/icons/StreamflowIcon.astro';
 
 	<Section id="awards" title="Awards">
 		<ul class="space-y-2">
-			<li class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-				<p class="text-zinc-300">MatHack - Faculty of Mathematics, Belgrade · 2nd place - trajectory generation using machine learning</p>
-				<p class="text-xs text-zinc-400">May 2018</p>
-			</li>
-			<li class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-				<p class="text-zinc-300">Deep Web Hackathon - Brasidas, Belgrade · 2nd place - website analysis</p>
-				<p class="text-xs text-zinc-400">Apr. 2017</p>
-			</li>
-			<li class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-				<p class="text-zinc-300">Beyond Hackathon - Eurobank, Athens · 2nd place (of 38 teams) - Eurobank voice assistant</p>
-				<p class="text-xs text-zinc-400">Mar. 2017</p>
-			</li>
+			<AwardItem
+				title="MatHack · 2nd place · trajectory generation using machine learning"
+				details="Faculty of Mathematics, Belgrade"
+				date="May 2018"
+			/>
+			<AwardItem
+				title="Deep Web Hackathon · 2nd place · deep web website analysis"
+				details="Brasidas, Belgrade"
+				date="Apr. 2017"
+			/>
+			<AwardItem
+				title="Beyond Hackathon · 2nd place (of 38 teams) · Eurobank voice assistant"
+				details="Eurobank, Athens"
+				date="Mar. 2017"
+			/>
 		</ul>
 	</Section>
 
 	<Section id="skills" title="Skills">
 		<SkillsBlock
-			technologies="TypeScript, React, Python, Pandas, SQL, .NET, Java, C++."
+			skills="Leadership, Mentoring, Hiring, Growth/Scaling, Technical Direction, Engineering"
+			technologies="TypeScript, React, Python, SQL"
 			notes="Selected technologies reflecting my most recent and relevant experience."
 			languages="Serbian (native), English (fluent)"
 		/>

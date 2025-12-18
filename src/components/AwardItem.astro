@@ -1,14 +1,15 @@
 ---
 export interface Props {
 	title: string;
+	details: string; // e.g. "Faculty of..., 2nd place - ..."
 	date: string; // e.g. "May 2018"
 }
-const { title, date } = Astro.props;
+const { title, details, date } = Astro.props;
 ---
 
-<li class="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
-	<p class="text-zinc-300">{title}</p>
-	<p class="text-xs text-zinc-400">{date}</p>
+<li>
+	<p class="font-medium">{title}</p>
+	<p class="text-sm text-zinc-400">{details} · {date}</p>
 </li>
 
 
