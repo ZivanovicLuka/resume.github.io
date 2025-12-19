@@ -4,7 +4,7 @@ export interface Props {
 	description?: string;
 }
 
-const { title = 'Luka Živanović - CV', description = 'Engineering Manager & Full‑Stack Developer' } = Astro.props;
+const { title = 'Luka Živanović', description = 'Engineering Manager & Full‑Stack Developer' } = Astro.props;
 import '../styles/global.css';
 ---
 
@@ -14,7 +14,11 @@ import '../styles/global.css';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
-		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+		<link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`} />
+		<link rel="icon" type="image/png" sizes="32x32" href={`${import.meta.env.BASE_URL}favicon-32x32.png`} />
+		<link rel="icon" type="image/png" sizes="16x16" href={`${import.meta.env.BASE_URL}favicon-16x16.png`} />
+		<link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`} />
+		<link rel="icon" type="image/x-icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
 		<title>{title}</title>
 	</head>
 	<body class="min-h-dvh bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-200 selection:text-zinc-900">
@@ -25,7 +29,7 @@ import '../styles/global.css';
 					<div id="site-identity" class="flex items-start gap-4 transition-all">
 						<img
 							id="site-avatar"
-							src={`${import.meta.env.BASE_URL}luka.jpg`}
+							src={`${import.meta.env.BASE_URL}luka.webp`}
 							alt="Portrait of Luka Živanović"
 							class="h-16 w-16 rounded-full object-cover ring-1 ring-zinc-800 transition-all duration-300"
 							loading="eager"
