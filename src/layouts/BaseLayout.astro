@@ -300,6 +300,8 @@ import '../styles/global.css';
 							const headerH = headerInner.offsetHeight;
 							const y = target.getBoundingClientRect().top + window.scrollY - headerH - 8;
 							window.scrollTo({ top: y, behavior: 'smooth' });
+							// Update URL with anchor without re-triggering hashchange
+							history.replaceState(null, '', href);
 						});
 					}, true);
 					// adjust when loading with a hash
